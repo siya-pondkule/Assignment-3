@@ -1,0 +1,10 @@
+<nav style="background: #007bff; padding: 10px; color: white;">
+  <span style="font-weight: bold; font-size: 20px;">School Management System</span>
+  <span *ngIf="auth.isLoggedIn()" style="float: right;">
+    <button (click)="logout()" style="padding: 5px 10px; background: white; color: #007bff; border: none; border-radius: 4px;">
+      Logout
+    </button>
+  </span>
+</nav>
+
+<router-outlet></router-outlet>

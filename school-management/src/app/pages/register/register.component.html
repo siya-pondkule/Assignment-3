@@ -1,0 +1,56 @@
+<h2 style="text-align: center; font-size: 2rem; margin-bottom: 20px; color: #007bff;">Register</h2>
+
+<form (ngSubmit)="register()" style="max-width: 400px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; 
+      border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+  
+  <!-- Name Field -->
+  <div style="margin-bottom: 15px;">
+    <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Name:</label>
+    <input [(ngModel)]="user.name" name="name" required 
+           style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; 
+                  outline: none; transition: border-color 0.3s; margin-bottom: 10px;">
+  </div>
+
+  <!-- Email Field -->
+  <div style="margin-bottom: 15px;">
+    <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Email:</label>
+    <input type="email" [(ngModel)]="user.email" name="email" required 
+           style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; 
+                  outline: none; transition: border-color 0.3s; margin-bottom: 10px;">
+  </div>
+
+  <!-- Password Field -->
+  <div style="margin-bottom: 15px;">
+    <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Password:</label>
+    <input type="password" [(ngModel)]="user.password" name="password" required 
+           style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; 
+                  outline: none; transition: border-color 0.3s; margin-bottom: 10px;">
+  </div>
+
+  <!-- Role Field -->
+  <div style="margin-bottom: 20px;">
+    <label style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Role:</label>
+    <select [(ngModel)]="user.role" name="role" 
+            style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; 
+                   outline: none; transition: border-color 0.3s;">
+      <option value="student">Student</option>
+      <option value="teacher">Teacher</option>
+      <option value="admin">Admin</option>
+    </select>
+  </div>
+
+  <!-- Register Button -->
+  <div style="text-align: center;">
+    <button type="submit" style="width: 100%; padding: 12px; background-color: #007bff; color: white; 
+                                border: none; border-radius: 5px; font-size: 1.2rem; cursor: pointer; 
+                                transition: background-color 0.3s;">
+      Register
+    </button>
+  </div>
+
+  <!-- Login Link -->
+  <p style="text-align: center; margin-top: 20px; font-size: 1rem; color: #555;">
+    Already have an account? 
+    <a routerLink="/login" style="color: #007bff; text-decoration: none; font-weight: bold;">Login here</a>
+  </p>
+</form>

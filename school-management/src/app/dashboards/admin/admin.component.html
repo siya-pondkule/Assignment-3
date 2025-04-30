@@ -1,0 +1,84 @@
+<h2 style="text-align: center; font-size: 2rem; margin-bottom: 20px;">Admin Dashboard</h2>
+
+<div class="tabs" style="display: flex; justify-content: center; margin-bottom: 20px;">
+  <button (click)="switchTab('student')" [class.active]="activeTab === 'student'" 
+          style="padding: 10px 20px; background-color: #007bff; color: white; border: none; 
+                 border-radius: 5px; font-size: 1rem; cursor: pointer; margin: 0 10px; 
+                 transition: background-color 0.3s ease;">
+    Student
+  </button>
+  <button (click)="switchTab('teacher')" [class.active]="activeTab === 'teacher'" 
+          style="padding: 10px 20px; background-color: #28a745; color: white; border: none; 
+                 border-radius: 5px; font-size: 1rem; cursor: pointer; margin: 0 10px; 
+                 transition: background-color 0.3s ease;">
+    Teacher
+  </button>
+</div>
+
+<!-- Student Tab -->
+<div *ngIf="activeTab === 'student'" class="tab-content" 
+     style="padding: 20px; border-radius: 8px; background-color: #f8f9fa;">
+  <h3 style="text-align: center; font-size: 1.5rem; color: #007bff; margin-bottom: 15px;">All Students</h3>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+    <thead>
+      <tr style="background-color: #007bff; color: white; text-align: left;">
+        <th style="padding: 12px; border: 1px solid #ddd;">Name</th>
+        <th style="padding: 12px; border: 1px solid #ddd;">Email</th>
+        <th style="padding: 12px; border: 1px solid #ddd;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students" 
+          style="background-color: #fff; border-bottom: 1px solid #ddd; text-align: left;">
+        <td style="padding: 12px;">{{ student.name }}</td>
+        <td style="padding: 12px;">{{ student.email }}</td>
+        <td style="padding: 12px;">
+          <button (click)="updateStudent(student.id)" 
+                  style="padding: 8px 15px; background-color: #ffc107; color: white; border: none;
+                         border-radius: 5px; cursor: pointer; margin-right: 5px; transition: background-color 0.3s;">
+            Update
+          </button>
+          <button (click)="deleteStudent(student.id)" 
+                  style="padding: 8px 15px; background-color: #dc3545; color: white; border: none;
+                         border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Teacher Tab -->
+<div *ngIf="activeTab === 'teacher'" class="tab-content" 
+     style="padding: 20px; border-radius: 8px; background-color: #f8f9fa;">
+  <h3 style="text-align: center; font-size: 1.5rem; color: #28a745; margin-bottom: 15px;">All Teachers</h3>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+    <thead>
+      <tr style="background-color: #28a745; color: white; text-align: left;">
+        <th style="padding: 12px; border: 1px solid #ddd;">Name</th>
+        <th style="padding: 12px; border: 1px solid #ddd;">Email</th>
+        <th style="padding: 12px; border: 1px solid #ddd;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let teacher of teachers" 
+          style="background-color: #fff; border-bottom: 1px solid #ddd; text-align: left;">
+        <td style="padding: 12px;">{{ teacher.name }}</td>
+        <td style="padding: 12px;">{{ teacher.email }}</td>
+        <td style="padding: 12px;">
+          <button (click)="updateTeacher(teacher.id)" 
+                  style="padding: 8px 15px; background-color: #ffc107; color: white; border: none;
+                         border-radius: 5px; cursor: pointer; margin-right: 5px; transition: background-color 0.3s;">
+            Update
+          </button>
+          <button (click)="deleteTeacher(teacher.id)" 
+                  style="padding: 8px 15px; background-color: #dc3545; color: white; border: none;
+                         border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

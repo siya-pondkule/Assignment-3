@@ -1,0 +1,28 @@
+<div class="container mt-4" style="max-width: 600px; margin: 0 auto; padding: 30px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h2 style="text-align: center; color: #343a40; font-family: 'Arial', sans-serif; font-size: 24px; margin-bottom: 20px; font-weight: 600;">Welcome Student</h2>
+  
+    <div *ngIf="hasData && marks">
+        <h3 style="color: #495057; margin-bottom: 20px; font-size: 20px; font-weight: 500;">Your Marks:</h3>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li style="padding: 12px 20px; background-color: #f1f3f5; margin-bottom: 10px; border-radius: 8px; font-size: 18px; font-weight: 500; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.2s;">
+                Subject 1: {{ marks.subject1 }}
+            </li>
+            <li style="padding: 12px 20px; background-color: #f1f3f5; margin-bottom: 10px; border-radius: 8px; font-size: 18px; font-weight: 500; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.2s;">
+                Subject 2: {{ marks.subject2 }}
+            </li>
+            <li style="padding: 12px 20px; background-color: #f1f3f5; margin-bottom: 10px; border-radius: 8px; font-size: 18px; font-weight: 500; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.2s;">
+                Subject 3: {{ marks.subject3 }}
+            </li>
+            <li style="padding: 12px 20px; background-color: #f1f3f5; margin-bottom: 10px; border-radius: 8px; font-size: 18px; font-weight: 500; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.2s;">
+                Subject 4: {{ marks.subject4 }}
+            </li>
+            <li style="padding: 12px 20px; background-color: #f1f3f5; margin-bottom: 10px; border-radius: 8px; font-size: 18px; font-weight: 500; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.2s;">
+                Subject 5: {{ marks.subject5 }}
+            </li>
+        </ul>
+    </div>
+  
+    <div *ngIf="!hasData">
+        <p style="color: #dc3545; text-align: center; font-size: 18px; font-weight: 600; font-family: 'Arial', sans-serif; margin-top: 20px;">No marks found yet.</p>
+    </div>
+</div>
